@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# src/ paketini dosyadan çalıştırırken de bulmak için kök yolu ekle
+
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -12,7 +11,7 @@ from src.preprocessing.cleaning import (
     standardize_text_columns,
     winsorize_series,
     normalize_tedavi_suresi,
-    normalize_uygulama_suresi,  # <-- UygulamaSuresi'ni dakikaya çevirir
+    normalize_uygulama_suresi,  
 )
 from src.preprocessing.build_features import transform_features
 
@@ -29,19 +28,19 @@ def main(excel_path: str, outdir: str = "./outputs"):
     excel_path = Path(excel_path)
     outdir = Path(outdir); outdir.mkdir(parents=True, exist_ok=True)
 
-    # 0) Oku
+  
     xls = pd.ExcelFile(excel_path)
     sheet = pick_sheet_with_target(xls, TARGET)
     df = pd.read_excel(xls, sheet_name=sheet)
 
-    # 1) Metin standartlaştırma
+  
     df = standardize_text_columns(df)
 
-    # 2) UygulamaSuresi'ni dakikaya çevir (sayısal kolon)
+    
     if "UygulamaSuresi" in df.columns:
         df["UygulamaSuresi_min"] = df["UygulamaSuresi"].apply(normalize_uygulama_suresi)
 
-    # 3) Özellik grupları
+   
     num_features = [c for c in ["Yas", "UygulamaSuresi_min"]
                     if c in df.columns and pd.api.types.is_numeric_dtype(df[c])]
     cat_features = [c for c in ["Cinsiyet", "KanGrubu", "Uyruk", "Bolum", "TedaviAdi"]
@@ -49,18 +48,17 @@ def main(excel_path: str, outdir: str = "./outputs"):
     mlb_fields   = [c for c in ["KronikHastalik", "Alerji", "Tanilar", "UygulamaYerleri"]
                     if c in df.columns]
 
-    # 4) Dönüşüm (impute + scale + OHE + multi-label binarization)
+    
     X_full, ml_vocab, preproc = transform_features(
         df, num_features, cat_features, mlb_fields, top_k=25
     )
 
-    # 5) Hedefi sayısallaştır
+   
     y = None
     if TARGET in df.columns:
         y = pd.to_numeric(df[TARGET].apply(normalize_tedavi_suresi), errors="coerce")
         yw = winsorize_series(y)
 
-    # 6) Kayıtlar
     X_full.to_csv(outdir / "X_processed.csv", index=False)
     try:
         X_full.to_parquet(outdir / "X_processed.parquet", index=False)
@@ -79,7 +77,7 @@ def main(excel_path: str, outdir: str = "./outputs"):
         except Exception:
             pass
 
-    # 7) Meta bilgi
+    
     meta = {
         "sheet": sheet,
         "num_features": num_features,
