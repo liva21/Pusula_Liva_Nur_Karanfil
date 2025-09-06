@@ -114,7 +114,3 @@ git push -u origin main
 ## İletişim
 Herhangi bir sorunuz için lütfen README başındaki e-posta adresinden iletişime geçin.
 
-## Notlar
-- Kişisel bilgileri, kurum politikaları gereği **anonim** tutun.
-- Bulgularınızı ayrı bir dokümana işlediyseniz, `reports/Bulgular_Ozeti.md` olarak ekleyin ve **belgenin en üstüne ad-soyad ve e-postanızı** yazmayı unutmayın.
-- Proje tamamlandığında **GitHub proje bağlantınızı aldığınız e-posta adresine** göndermeyi unutmayın.
