@@ -1,7 +1,7 @@
 # Pusula_Liva_Nur_Karanfil
 
 **Ad Soyad:** Liva Nur Karanfil  
-**E-posta:** <e-postanızı yazın>
+**E-posta:** <karanfillivanur@gmail.com>
 
 ## Proje Özeti
 Bu depo, Fizik Tedavi ve Rehabilitasyon (PM&R) alanındaki **2235 gözlem** ve **13 özellikten** oluşan veri kümesi için Keşifsel Veri Analizi (EDA) ve **model öncesi veri hazırlama** (temizleme, standardizasyon, özellik mühendisliği) adımlarını içerir. Bu çalışma **model kurmayı zorunlu kılmaz**; odak, hedef değişken **`TedaviSuresi`** etrafında veriyi **temiz, tutarlı ve analiz edilebilir** hâle getirmektir.
