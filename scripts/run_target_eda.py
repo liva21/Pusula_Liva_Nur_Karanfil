@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -42,14 +42,14 @@ def main(excel, outdir="outputs/figures_target"):
     df[TARGET] = df[TARGET].apply(normalize_tedavi_suresi)
     df[TARGET] = pd.to_numeric(df[TARGET], errors="coerce")
 
-    # scatter: numerik -> hedef
+   
     for col in ["Yas", "UygulamaSuresi"]:
         if col in df.columns and pd.api.types.is_numeric_dtype(df[col]):
             mask = df[col].notna() & df[TARGET].notna()
             if mask.any():
                 save_scatter(df.loc[mask, col], df.loc[mask, TARGET], col, outdir)
 
-    # box: kategorik -> hedef
+   
     for col in ["Bolum","Cinsiyet","KanGrubu","Uyruk","TedaviAdi"]:
         if col in df.columns:
             save_box(df[[col, TARGET]].dropna(), col, TARGET, outdir, topn=10)
