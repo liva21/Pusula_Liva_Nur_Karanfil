@@ -1,0 +1,14 @@
+,0
+HastaNo,int64
+Yas,int64
+Cinsiyet,object
+KanGrubu,object
+Uyruk,object
+KronikHastalik,object
+Bolum,object
+Alerji,object
+Tanilar,object
+TedaviAdi,object
+TedaviSuresi,object
+UygulamaYerleri,object
+UygulamaSuresi,object

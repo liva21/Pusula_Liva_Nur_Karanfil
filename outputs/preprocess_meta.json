@@ -1,0 +1,70 @@
+{
+  "sheet": "Sheet1",
+  "num_features": [
+    "Yas",
+    "UygulamaSuresi_min"
+  ],
+  "cat_features": [
+    "Cinsiyet",
+    "KanGrubu",
+    "Uyruk",
+    "Bolum",
+    "TedaviAdi"
+  ],
+  "mlb_fields": [
+    "KronikHastalik",
+    "Alerji",
+    "Tanilar",
+    "UygulamaYerleri"
+  ],
+  "ml_vocab_sample": {
+    "KronikHastalik": [
+      "aritmi",
+      "hiportiroidizm",
+      "limb-girdle musk\u00fcler distrofi",
+      "ast\u0131m",
+      "hipertiroidizm",
+      "myastenia gravis",
+      "diyabet",
+      "duchenne musk\u00fcler distrofisi",
+      "fascioscapulohumeral distrofi",
+      "kalp yetmezli\u011fi"
+    ],
+    "Alerji": [
+      "polen",
+      "toz",
+      "novalgin",
+      "sucuk",
+      "arveles",
+      "coraspin",
+      "voltaren",
+      "yer f\u0131st\u0131\u011f\u0131",
+      "gri\u0307pi\u0307n",
+      "volteren"
+    ],
+    "Tanilar": [
+      "dorsalji\u0307",
+      "di\u0307\u011fer",
+      "tan\u0131mlanmam\u0131\u015f",
+      "omuzun darbe sendromu",
+      "i\u0307ntervertebral disk bozukluklar\u0131",
+      "lumbosakral b\u00f6lge",
+      "servi\u0307kotorasi\u0307k b\u00f6lge",
+      "servi\u0307kal b\u00f6lge",
+      "eklem a\u011fr\u0131s\u0131",
+      "dorsalji"
+    ],
+    "UygulamaYerleri": [
+      "bel",
+      "boyun",
+      "diz",
+      "sol omuz b\u00f6lgesi",
+      "sa\u011f omuz b\u00f6lgesi",
+      "s\u0131rt",
+      "sol el bilek b\u00f6lgesi",
+      "sa\u011f ayak bile\u011fi b\u00f6lgesi",
+      "sol ayak bile\u011fi b\u00f6lgesi",
+      "t\u00fcm v\u00fccut b\u00f6lgesi"
+    ]
+  }
+}
